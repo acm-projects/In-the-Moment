@@ -57,9 +57,9 @@
 ## General Resources
 - <a href="https://www.youtube.com/watch?v=JPZsB_6yHVo">VS Code download guide</a>
 - <a href="https://education.github.com/git-cheat-sheet-education.pdf">Git cheat sheet</a>
-- <a href="https://www.youtube.com/watch?v=1xipg02Wu8s"> Flutter Basics</a>
-- <a href="https://www.youtube.com/watch?v=aiTTClKJbnw">Building your first app</a>
-- <a href="https://www.youtube.com/watch?v=x0uinJvhNxI">Advanced flutter guide - super long video lol</a>
+- <a href="https://www.youtube.com/watch?v=gvkqT_Uoahw"> Getting to know react-native</a>
+- <a href="https://www.youtube.com/watch?v=Hf4MJH0jDb4">Building your first app</a>
+- <a href="https://www.youtube.com/watch?v=0-S5a0eXPoc">Learn react-native in two hours</a>
 <br>
 
 ## Roadblocks and Possible Solutions
@@ -70,3 +70,23 @@
 ## Competition
 - <a href="https://apps.apple.com/us/app/autosilent/id474777148?platform=iphone">AutoSilent</a> - only silences based on location and is a paid app
 - Still searching for some, but overall this app is a unique concept
+<br>
+
+## Git Commands
+| Command | What it does |
+|-----|-------|
+|git branch | lists all the branches |
+|git branch "branch name" | makes a new branch |
+|git checkout "branch name" | switches to speicified branch |
+|git checkout -b "branch name"| combines the previous 2 commands |
+|git add .| finds all changed files|
+|git commit -m "Testing123"| commit with a message|
+|git push origin "branch"| push to branch |
+|git pull origin "branch"| pull updates from a specific branch|
+<br>
+
+## Meet the coolest devs around
+- Mateo Estrada
+- Evan Ngo
+- Zohaib Saqib
+- Gabe Puente
