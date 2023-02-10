@@ -46,7 +46,7 @@
   - <a href="https://code.visualstudio.com/download">VS Code</a>
 - Frontend
   - <a href="https://www.figma.com/">figma</a> or <a href="https://www.adobe.com/products/xd/pricing/free-trial.html">adobe XD</a>
-  - <a href="https://docs.flutter.dev/get-started/install">Flutter</a>
+  - <a href="https://reactnative.dev/docs/environment-setup">React-native</a>
 - Backend
   - Firebase
   - TBD based on teams needs
@@ -58,6 +58,7 @@
 - <a href="https://www.youtube.com/watch?v=JPZsB_6yHVo">VS Code download guide</a>
 - <a href="https://education.github.com/git-cheat-sheet-education.pdf">Git cheat sheet</a>
 - <a href="https://www.youtube.com/watch?v=gvkqT_Uoahw"> Getting to know react-native</a>
+- <a href="https://www.youtube.com/watch?v=elrvHNrDVXI&ab_channel=TheJuceKing"> Getting ios App to work on windows machine </a>
 - <a href="https://www.youtube.com/watch?v=Hf4MJH0jDb4">Building your first app</a>
 - <a href="https://www.youtube.com/watch?v=0-S5a0eXPoc">Learn react-native in two hours</a>
 <br>
