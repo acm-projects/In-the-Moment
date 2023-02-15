@@ -48,8 +48,7 @@
   - <a href="https://www.figma.com/">figma</a> or <a href="https://www.adobe.com/products/xd/pricing/free-trial.html">adobe XD</a>
   - <a href="https://reactnative.dev/docs/environment-setup">React-native</a>
 - Backend
-  - Firebase
-  - TBD based on teams needs
+  - MongoDB
 - Additional software to download
   - <a href="https://git-scm.com/downloads">Git</a>
 <br>
@@ -61,6 +60,7 @@
 - <a href="https://www.youtube.com/watch?v=elrvHNrDVXI&ab_channel=TheJuceKing"> Getting ios App to work on windows machine </a>
 - <a href="https://www.youtube.com/watch?v=Hf4MJH0jDb4">Building your first app</a>
 - <a href="https://www.youtube.com/watch?v=0-S5a0eXPoc">Learn react-native in two hours</a>
+- <a href="https://www.youtube.com/watch?v=7CqJlxBYj-M">Learning the mern stack</a>
 <br>
 
 ## Roadblocks and Possible Solutions
