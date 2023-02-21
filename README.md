@@ -12,17 +12,17 @@
   - modify severity of silence
   - give certain apps or contacts priority over app
 - User authentication features 
-  - tie into a friends list
 - Allow for bubble<sup>1</sup> creation 
   - certain locations with corresponding times 
-  - around each users
 - A strong UI/UX
 - An override feature to disable the app
+- Toggle to create a moment anywhere anytime
 > 1. bubble refers to the location where a moment<sup>2</sup> is created
 > 2. moment refers to the silencing of the device
 <br> <br>
 ## Stretch Goals    :hourglass_flowing_sand:
-- Advanced form of friending such as a QR code
+- Include a friends list
+- Allow bubbles to be created around users' friends
 - Live map displays
   - all friended users
   - all active and inactive bubbles
@@ -49,7 +49,7 @@
   - <a href="https://reactnative.dev/docs/environment-setup">React-native</a>
 - Backend
   - MongoDB
-- Additional software to download
+- Additional software to download (for windows only)
   - <a href="https://git-scm.com/downloads">Git</a>
 <br>
 
