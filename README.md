@@ -64,7 +64,6 @@
 <br>
 
 ## Roadblocks and Possible Solutions
-- Learning flutter and dart can prove to be difficult but a simple project alongside a video tutorial can help speed up the learning process.
 - The silencing can be done in a number of ways but the simplest can be on iPhone to request the user shares a simple shortcut with the app and gives it permission to use whenever it is time to create a moment. Although this does not make the app ready for use straight after installation, it gives a more personal touch to the user, and that little sacrifice from the user can go a long way in terms of satisfaction and relationship with the app itself. (This could be a good way of framing it should this be a topic of conversation on presentation night).
 <br>
 
