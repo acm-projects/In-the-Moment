@@ -2,6 +2,7 @@ import LandingPage from './Screens/LandingPage';
 import SignIn from './Screens/SignIn';
 import SignUp from './Screens/SignUp';
 import React from 'react';
+import Realm from 'realm';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 

@@ -16,8 +16,10 @@ const SignIn = ({navigation}) => {
           <Text style={styles.Text2}>Sign in to your account</Text>
         </View>
         <View style={styles.FormView}>
-          <TextInput style={styles.TextInput} placeholder={'Username'} />
-          <TextInput style={styles.TextInput} placeholder={'Password'} />
+          <TextInput style={styles.TextInput} placeholder={'Username'} 
+          />
+          <TextInput style={styles.TextInput} secureTextEntry = {true} placeholder={'Password'} 
+          />
         </View>
         <Text style={styles.Text3}>Forgot your password?</Text>
         <View style={styles.BottomView}>
@@ -25,8 +27,23 @@ const SignIn = ({navigation}) => {
           <LinearGradient
             style={styles.Button}
             colors={['#F97794', '#7642A0']}
-            start={{y: 0.3}}>
-            <Button color={'white'} title={` `} />
+            >
+            <Button color={'white'} title={` `} 
+              onPress={async() =>{
+                const REALM_APP_ID = "in-the-moment-fbdgk";
+                const app = new Realm.App({id: REALM_APP_ID});
+                const credentials = Realm.Credentials.anonymous();
+                try{
+                  const user = await app.logIn(credentials);
+                  console.log("successfully logged in!", user.id);
+                  return user; 
+                }catch(err){
+                  if (err instanceof Error){
+                    console.error("Failed to log in", err.message);
+                  }
+                }
+              }}
+            />
           </LinearGradient>
         </View>
         <Text style={styles.Text5} onPress={() => {navigation.navigate('signUp')}}>
