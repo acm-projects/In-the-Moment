@@ -8,6 +8,8 @@ import PopupPage from './Screens/PopupPage';
 import PrePopupPage from './Screens/PrePopupPage';
 import ProfilePage from './Screens/ProfilePage';
 import MapScreen from './Screens/MapScreen';
+import HomePage from './Screens/HomePage';
+import RestrictedApps from './Screens/RestrictedApps';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -34,6 +36,11 @@ const App = () => {
           component={MapScreen}
           options={{headerShown: false}}
         />
+        <Stack.Screen
+          name="homePage"
+          component={HomePage}
+          options={{headerShown: false}}
+        />
         {/*<Stack.Screen
           name="prePopupPage"
           component={PrePopupPage}
@@ -43,12 +50,17 @@ const App = () => {
           name="popupPage"
           component={PopupPage}
           options={{headerShown: false}}
-        />
+        />*/}
         <Stack.Screen
           name="profilePage"
           component={ProfilePage}
           options={{headerShown: false}}
-        />*/}
+        />
+        <Stack.Screen
+          name="restrictedApps"
+          component={RestrictedApps}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

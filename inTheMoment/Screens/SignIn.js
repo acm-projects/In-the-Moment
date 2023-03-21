@@ -57,7 +57,7 @@ const SignIn = ({navigation}) => {
             <Button color={'white'} title={` `} 
               onPress={() => {
                 signIn().then(() => {
-                  navigation.navigate('mapScreen');
+                  navigation.navigate('homePage');
                 });
               }}
             />

@@ -41,7 +41,7 @@ const HomePage = ({navigation}) => (
                 <Image source={require('../assets/images/apps.png')} style={styles.icon2} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => { } }>
+            <TouchableOpacity onPress={() => {navigation.navigate('profilePage')} }>
                 <Image source={require('../assets/images/profile.png')} style={styles.icon3} />
             </TouchableOpacity>
         </LinearGradient>
