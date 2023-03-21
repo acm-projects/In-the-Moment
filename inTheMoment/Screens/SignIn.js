@@ -1,7 +1,28 @@
-import React from 'react';
-import {StyleSheet, View, Text, Image, Button, TextInput} from 'react-native';
+import React, { useState } from 'react';
+import {StyleSheet,SafeAreaView, View, Text, Button, TextInput} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Realm from 'realm'
+import app from '../backend/realmApp';
+
+
 const SignIn = ({navigation}) => {
+
+  const [user, setUser] = useState(app.currentUser || null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const signIn = async () => {
+    try{
+      const creds = Realm.Credentials.emailPassword(email, password);
+      const newUser = await app.logIn(creds);
+      setUser(newUser);
+      console.log("Successfully logged in user:", user.id);
+      return user;
+    }catch (err){
+      console.log("Failed to log in", err.message);
+    }
+  };
+
   return (
     <LinearGradient
       colors={['#9CB6EA', '#FF9BC3']}
@@ -16,8 +37,15 @@ const SignIn = ({navigation}) => {
           <Text style={styles.Text2}>Sign in to your account</Text>
         </View>
         <View style={styles.FormView}>
-          <TextInput style={styles.TextInput} placeholder={'Username'} />
-          <TextInput style={styles.TextInput} placeholder={'Password'} />
+          <TextInput style={styles.TextInput} placeholder={'Email'} 
+            onChangeText={setEmail}
+            value={email}
+          />
+          <TextInput style={styles.TextInput} placeholder={'Password'} 
+            onChangeText={(text) => setPassword(text)}
+            value={password}
+            secureTextEntry 
+          />
         </View>
         <Text style={styles.Text3}>Forgot your password?</Text>
         <View style={styles.BottomView}>
@@ -25,8 +53,14 @@ const SignIn = ({navigation}) => {
           <LinearGradient
             style={styles.Button}
             colors={['#F97794', '#7642A0']}
-            start={{y: 0.3}}>
-            <Button color={'white'} title={` `} />
+            >
+            <Button color={'white'} title={` `} 
+              onPress={() => {
+                signIn().then(() => {
+                  navigation.navigate('mapScreen');
+                });
+              }}
+            />
           </LinearGradient>
         </View>
         <Text style={styles.Text5} onPress={() => {navigation.navigate('signUp')}}>

@@ -1,7 +1,55 @@
-import React from 'react';
-import {StyleSheet, View, Text, Image, Button, TextInput} from 'react-native';
+import React, { useState } from 'react';
+import {StyleSheet, View, Text, Button, TextInput, Alert} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import app from '../backend/realmApp';
+
+
+
+
 const SignUp = ({navigation}) => {
+
+  const [user, setUser] = useState(app.currentUser || null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+    
+  
+  const signUp = async() =>{
+    const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+    const regPassword = /^[a-zA-Z0-9]{6,}$/;
+
+    if(reg.test(email) === false){
+      Alert.alert(
+        "Email",
+        "Please insert a valid email",
+        [
+          {text: "OK", onPress: () => console.log("OK pressed")}
+        ]
+      );
+    }
+
+    else if (password === null || regPassword.test(password) === false){
+      Alert.alert(
+        "Password",
+        "Please enter a password of minimum 6 characters",
+        [
+          { text: "OK", onPress: () => console.log("OK pressed") }
+        ]
+      );
+    }
+    else{
+      await app.emailPasswordAuth.registerUser({email, password}); 
+      Alert.alert(
+        "Confirm User",
+        "An email has been sent to you in order to confirm your email",
+        [
+          { text: "OK", onPress: () => console.log("OK pressed")}
+        ]
+      );
+    }
+  };
+
+
   return (
     <LinearGradient
       colors={['#9CB6EA', '#FF9BC3']}
@@ -12,17 +60,29 @@ const SignUp = ({navigation}) => {
           <Text style={styles.Text}>Create an Account!</Text>
         </View>
         <View style={styles.FormView}>
-          <TextInput style={styles.TextInput} placeholder={'Username'} />
-          <TextInput style={styles.TextInput} placeholder={'Password'} />
-          <TextInput style={styles.TextInput} placeholder={'E-mail'} />
+          <TextInput style={styles.TextInput} placeholder={'Username'} 
+            onChangeText={setUsername}
+            value={username}
+          />
+          <TextInput style={styles.TextInput} placeholder={'Password'} 
+            onChangeText={(text) => setPassword(text)}
+            value={password}
+            secureTextEntry
+          />
+          <TextInput style={styles.TextInput} placeholder={'E-mail'} 
+            onChangeText={setEmail}
+            value={email}
+          />
         </View>
         <View style={styles.BottomView}>
           <Text style={styles.Text4}>Get Started</Text>
           <LinearGradient
             style={styles.Button}
             colors={['#F97794', '#7642A0']}
-            start={{y: 0.3}}>
-            <Button color={'white'} title={` `} />
+            >
+            <Button color={'white'} title={` `} 
+              onPress={signUp} 
+            />
           </LinearGradient>
         </View>
         <Text style={styles.Text5} onPress={() => {navigation.navigate('signIn')}}>
