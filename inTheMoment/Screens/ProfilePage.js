@@ -1,37 +1,59 @@
-import {StyleSheet, Text} from 'react-native';
-import {View, Button} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, Button} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Profile from '../assets/images/profile.svg';
+import Info from '../assets/images/info.svg';
+import Settings from '../assets/images/settings.svg';
+import Comments from '../assets/images/comments.svg';
+import Friends from '../assets/images/friends.svg';
+import DarkMode from '../assets/images/dark_mode.svg';
+import Home from '../assets/images/home.svg';
 
 const ProfilePage = ({navigation}) => {
   return (
     <View style={styles.mainView}>
       <View style={styles.topView}>
-        <LinearGradient
-          colors={['#8CBBF1', '#FF9BC3']}
-          style={styles.profile}>
-            <Text style={styles.name}>John Doe</Text>
-            <Text style={styles.email}>inthemoment@gmail.com</Text>
-          </LinearGradient>
+        <LinearGradient colors={['#8CBBF1', '#FF9BC3']} style={styles.profile}>
+          <Profile style={styles.icon2} />
+          <Text style={styles.name}>John Doe</Text>
+          <Text style={styles.email}>inthemoment@gmail.com</Text>
+        </LinearGradient>
       </View>
       <View style={styles.middleView}>
-        <LinearGradient
-          colors={['#8CBBF1', '#FF9BC3']}
-          style={styles.item}></LinearGradient>
-        <LinearGradient
-          colors={['#8CBBF1', '#FF9BC3']}
-          style={styles.item}></LinearGradient>
-        <LinearGradient
-          colors={['#8CBBF1', '#FF9BC3']}
-          style={styles.item}></LinearGradient>
-        <LinearGradient
-          colors={['#8CBBF1', '#FF9BC3']}
-          style={styles.item}></LinearGradient>
-        <LinearGradient
-          colors={['#8CBBF1', '#FF9BC3']}
-          style={styles.item}></LinearGradient>
-        <LinearGradient
-          colors={['#8CBBF1', '#FF9BC3']}
-          style={styles.item}></LinearGradient>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.goBack();
+          }}>
+          <LinearGradient colors={['#8CBBF1', '#FF9BC3']} style={styles.item}>
+            <Home width={78} height={78} />
+          </LinearGradient>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <LinearGradient colors={['#8CBBF1', '#FF9BC3']} style={styles.item}>
+            <Settings />
+          </LinearGradient>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <LinearGradient colors={['#8CBBF1', '#FF9BC3']} style={styles.item}>
+            <Info />
+          </LinearGradient>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <LinearGradient colors={['#8CBBF1', '#FF9BC3']} style={styles.item}>
+            <Friends width={60} height={60} />
+          </LinearGradient>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <LinearGradient colors={['#8CBBF1', '#FF9BC3']} style={styles.item}>
+            <Comments />
+          </LinearGradient>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <LinearGradient colors={['#8CBBF1', '#FF9BC3']} style={styles.item}>
+            <DarkMode />
+          </LinearGradient>
+        </TouchableOpacity>
       </View>
       <View style={styles.bottomView}>
         <LinearGradient style={styles.Button} colors={['#F97794', '#A771FF']}>
@@ -89,6 +111,8 @@ const styles = StyleSheet.create({
     height: 90,
     borderRadius: 25,
     margin: 18,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   Button: {
     width: '70%',
@@ -100,11 +124,14 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 50,
     color: 'white',
-    marginTop: 160,
+    marginTop: 20,
   },
   email: {
     fontSize: 20,
     color: 'white',
-    marginTop: 20,
-  }
+    marginTop: 15,
+  },
+  icon2: {
+    marginTop: 30,
+  },
 });

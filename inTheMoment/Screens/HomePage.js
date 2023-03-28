@@ -1,6 +1,9 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import Profile from '../assets/images/profile.svg';
+import Apps from '../assets/images/apps.svg';
+import Location from '../assets/images/location.svg';
 
 const HomePage = ({navigation}) => (
 
@@ -34,15 +37,15 @@ const HomePage = ({navigation}) => (
             end={{ x: 1, y: 1 }}
             style={styles.bottomPanel}>
             <TouchableOpacity onPress={() => {} }>
-                <Image source={require('../assets/images/location.png')} style={styles.icon1} />
+                <Location width={110} height={110} style={styles.icon1} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => {navigation.navigate('restrictedApps')} }>
-                <Image source={require('../assets/images/apps.png')} style={styles.icon2} />
+                <Apps width={76} height={74} style={styles.icon2} />
             </TouchableOpacity>
 
             <TouchableOpacity onPress={() => {navigation.navigate('profilePage')} }>
-                <Image source={require('../assets/images/profile.png')} style={styles.icon3} />
+                <Profile width={75} height={75} style={styles.icon2} />
             </TouchableOpacity>
         </LinearGradient>
 

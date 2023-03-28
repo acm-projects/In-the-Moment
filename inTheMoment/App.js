@@ -10,6 +10,7 @@ import ProfilePage from './Screens/ProfilePage';
 import MapScreen from './Screens/MapScreen';
 import HomePage from './Screens/HomePage';
 import RestrictedApps from './Screens/RestrictedApps';
+import { CardStyleInterpolators } from '@react-navigation/stack';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -41,16 +42,6 @@ const App = () => {
           component={HomePage}
           options={{headerShown: false}}
         />
-        {/*<Stack.Screen
-          name="prePopupPage"
-          component={PrePopupPage}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="popupPage"
-          component={PopupPage}
-          options={{headerShown: false}}
-        />*/}
         <Stack.Screen
           name="profilePage"
           component={ProfilePage}
@@ -61,6 +52,16 @@ const App = () => {
           component={RestrictedApps}
           options={{headerShown: false}}
         />
+        {/* <Stack.Screen
+          name="prePopupPage"
+          component={PrePopupPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="popupPage"
+          component={PopupPage}
+          options={{headerShown: false , cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS}}
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
