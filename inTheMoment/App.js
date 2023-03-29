@@ -33,11 +33,6 @@ const App = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="mapScreen"
-          component={MapScreen}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
           name="homePage"
           component={HomePage}
           options={{headerShown: false}}

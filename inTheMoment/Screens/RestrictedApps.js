@@ -9,7 +9,8 @@ import {
   Switch,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import BackArrow from '../assets/images/back_arrow.svg';
+import { SvgXml } from 'react-native-svg';
+
 
 const RestrictedApps = ({navigation}) => {
   placeholder = 'https://via.placeholder.com/150';
@@ -99,7 +100,7 @@ const RestrictedApps = ({navigation}) => {
           onPress={() => {
             navigation.goBack();
           }}>
-          <BackArrow style={styles.icon2} />
+          <SvgXml xml={back_arrow} style={styles.icon2} />
         </TouchableOpacity>
         <Text style={styles.title}>Restricted Apps</Text>
       </View>
@@ -201,3 +202,8 @@ const styles = StyleSheet.create({
 });
 
 export default RestrictedApps;
+
+const back_arrow = `<svg width="49" height="46" viewBox="0 0 49 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24.5 38.3334L8.16667 23L24.5 7.66669L27.4094 10.35L15.976 21.0834H40.8333V24.9167H15.976L27.4094 35.65L24.5 38.3334Z" fill="white"/>
+</svg>
+`
