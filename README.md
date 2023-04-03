@@ -1,7 +1,7 @@
 ![In the Moment](https://user-images.githubusercontent.com/90812938/217378418-7d8971d7-3a7e-4399-b318-67f1dc2b0295.jpeg)
 # <h1 align="center">In the Moment</h1>
 
-<p align="center">Do you find yourself spending too much time on your mobile device when you should be paying attention to other tasks instead? Well I know I do! With the help of In the Moment you're gonna be deterred from using your phone when its time for class and you're in the right location OR when you're near one of your friend's phones.</p>
+<p align="center">Do you find yourself spending too much time on your mobile device when you should be paying attention to other tasks instead? Well I know I do! With the help of In the Moment you're gonna be deterred from using your phone when its time for class and you're in the right location!.</p>
 <br>
 
 ## MVP       :trophy:
