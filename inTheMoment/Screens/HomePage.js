@@ -1,7 +1,13 @@
 import React from 'react';
-import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, Image, TouchableOpacity, Platform} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { SvgXml } from 'react-native-svg';
+import {request, PERMISSIONS, setPermissionResult} from 'react-native-permissions'; 
+
+request(Platform.OS === 'ios' ? PERMISSIONS.IOS.CAMERA : PERMISSIONS.ANDROID.CAMERA).then((result) => {
+        setPermissionResult(result)
+        console.log(result)
+      });
 
 const HomePage = ({navigation}) => {
   return (
