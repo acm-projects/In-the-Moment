@@ -8,9 +8,6 @@
 - Silence
   - Restrict notifications
   - Restrict certain applications
-- User settings
-  - modify severity of silence
-  - give certain apps or contacts priority over app
 - User authentication features 
 - Allow for bubble<sup>1</sup> creation 
   - certain locations with corresponding times 
@@ -21,6 +18,9 @@
 > 2. moment refers to the silencing of the device
 <br> <br>
 ## Stretch Goals    :hourglass_flowing_sand:
+- User settings
+  - modify severity of silence
+  - give certain apps or contacts priority over app
 - Include a friends list
 - Allow bubbles to be created around users' friends
 - Live map displays
