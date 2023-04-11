@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
+import {StyleSheet, View, Text, Image, TouchableOpacity, ScrollView, Switch} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 const RestrictedApps = ({navigation}) => {
@@ -49,17 +49,37 @@ const RestrictedApps = ({navigation}) => {
         },
       ]);
 
+      const [isEnabled, setIsEnabled] = useState(false)
+      const [status, setStatus] = useState('Unrestricted')
+
+      const toggleSwitch = () => {
+        if (isEnabled) {
+          setStatus('Unrestricted')
+        }
+        else {
+          setStatus('Restricted')
+        }
+
+        setIsEnabled(previousState => !previousState)
+      }
+
       const renderItem = (item) => {
         return (
           <View style={styles.itemContainer}>
             <Image style={styles.image} source={{ uri: item.image }} />
             <View style={styles.infoContainer}>
-              <Text style={styles.itemName}> {item.name}: </Text>
-              <Text style={styles.itemStatus}>{item.status} </Text>
-              {/* <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Button</Text>
-              </TouchableOpacity> */}
-            </View>
+              <View style = {styles.textContainer}>
+                <Text style={styles.itemName}> {item.name}: </Text>
+                <Text style={styles.itemStatus}>{status} </Text>
+              </View>
+              <Switch
+                onValueChange={toggleSwitch}
+                value = {isEnabled}
+                style = {styles.button}
+                trackColor= {{false: 'grey', true: 'purple'}}
+                thumbColor = {isEnabled ? 'white' : 'white'}
+              /> 
+            </View> 
           </View>
         );
       };
@@ -111,8 +131,12 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: 'bold',
         color: '#2F2929',
+        textShadowColor: 'white',
+        textShadowRadius: 10,
+        letterSpacing: 2,
         marginRight: 70,
-        marginTop: 5
+        marginTop: 5,
+
       },
       container: {
         flex: 1,
@@ -139,11 +163,12 @@ const styles = StyleSheet.create({
         height: 100,
         marginRight: 8,
       },
+      textContainer: {
+        flexDirection: 'row'
+      },
       infoContainer: {
-        flex: 0,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 30
+        flexDirection: 'column',
+        marginBottom: 30,
       },
       itemName: {
         fontSize: 26,
@@ -156,15 +181,10 @@ const styles = StyleSheet.create({
         marginLeft: 0,
       },
       button: {
-        backgroundColor: '#2f95dc',
-        paddingHorizontal: 16,
-        paddingVertical: 8,
-        borderRadius: 4,
-      },
-      buttonText: {
-        color: '#fff',
-        fontWeight: 'bold',
-      },
+        alignSelf: 'center',
+        transform: [{scaleX: 1.75}, {scaleY: 1.75}]
+      }
+   
 })
  
 export default RestrictedApps;

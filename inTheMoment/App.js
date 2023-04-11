@@ -10,6 +10,7 @@ import ProfilePage from './Screens/ProfilePage';
 import MapScreen from './Screens/MapScreen';
 import HomePage from './Screens/HomePage';
 import RestrictedApps from './Screens/RestrictedApps';
+import RestrictedLocations from './Screens/RestrictedLocations';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -59,6 +60,11 @@ const App = () => {
         <Stack.Screen
           name="restrictedApps"
           component={RestrictedApps}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="restrictedLocations"
+          component={RestrictedLocations}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

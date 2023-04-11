@@ -33,7 +33,7 @@ const HomePage = ({navigation}) => (
             start={{ x: 0, y: 1 }}
             end={{ x: 1, y: 1 }}
             style={styles.bottomPanel}>
-            <TouchableOpacity onPress={() => {} }>
+            <TouchableOpacity onPress={() => {navigation.navigate('restrictedLocations')} }>
                 <Image source={require('../assets/images/location.png')} style={styles.icon1} />
             </TouchableOpacity>
 
@@ -67,14 +67,17 @@ const styles = StyleSheet.create({
         fontSize: 25,
         color: 'white',
         fontWeight: 'bold',
-        marginTop: 50,
+        marginTop: 25,
         textAlign: 'center',
+        textShadowColor: 'gray',
+        textShadowRadius: 10
     },
     text2: {
         fontSize: 15,
         color: 'white',
         marginTop: 15,
-        textAlign: 'center'
+        textAlign: 'center',
+        textDecorationLine: 'underline'
     },
     ImageBackground: {
         flex: 1,
